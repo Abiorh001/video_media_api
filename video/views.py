@@ -175,7 +175,7 @@ class CreateListVideo(APIView):
         serializer = VideoSerializer(data=data)
         if serializer.is_valid():
             video_obj = serializer.save()
-            video_url = f'https://zuri-stage-6-api.onrender.com/api/videos/{video_obj.id}/'
+            video_url = f'https://zuri-stage-6-apis.onrender.com/api/videos/{video_obj.id}/'
             video_obj.video_url = video_url
             video_obj.save()
 
