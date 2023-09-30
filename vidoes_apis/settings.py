@@ -144,7 +144,8 @@ MEDIA_URL = '/media/'
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOWS_ORIGINS = [
     "http://localhost:5500",
-    "https://zuri-stage-6-api.onrender.com",
+    "https://zuri-stage-6-apis.onrender.com",
+    "https://helpmeoo.netlify.app/",
 ]
 
 CORS_ALLOW_METHODS = [
