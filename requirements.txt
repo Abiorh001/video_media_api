@@ -6,3 +6,4 @@ pytz
 sqlparse
 typing_extensions
 gunicorn
+django-cors-headers
