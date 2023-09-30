@@ -1,0 +1,8 @@
+asgiref
+Django
+djangorestframework
+Pillow
+pytz
+sqlparse
+typing_extensions
+gunicorn

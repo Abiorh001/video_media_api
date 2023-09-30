@@ -1,0 +1,523 @@
+Watching for file changes with StatReloader
+Internal Server Error: /api/videos/
+Traceback (most recent call last):
+  File "/home/abiorh/vidoemediaapis/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/abiorh/vidoemediaapis/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/abiorh/vidoemediaapis/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/abiorh/vidoemediaapis/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/abiorh/vidoemediaapis/venv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/abiorh/vidoemediaapis/venv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/abiorh/vidoemediaapis/venv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/abiorh/vidoemediaapis/venv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/abiorh/vidoemediaapis/video/views.py", line 45, in post
+    with open(video.file.path, 'rb') as video_file:
+  File "/usr/lib/python3.10/tempfile.py", line 617, in __getattr__
+    a = getattr(file, name)
+AttributeError: '_io.BufferedRandom' object has no attribute 'path'
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /api/videos/
+Traceback (most recent call last):
+  File "/home/abiorh/vidoemediaapis/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/abiorh/vidoemediaapis/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/abiorh/vidoemediaapis/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/abiorh/vidoemediaapis/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/abiorh/vidoemediaapis/venv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/abiorh/vidoemediaapis/venv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/abiorh/vidoemediaapis/venv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/abiorh/vidoemediaapis/venv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/abiorh/vidoemediaapis/video/views.py", line 45, in post
+    with open(video, 'rb') as video_file:
+TypeError: expected str, bytes or os.PathLike object, not TemporaryUploadedFile
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /api/videos/
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /api/videos/
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/urls.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/urls.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/urls.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/urls.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/urls.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /api/videos/5/
+Traceback (most recent call last):
+  File "/home/abiorh/vidoemediaapis/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/abiorh/vidoemediaapis/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/abiorh/vidoemediaapis/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/abiorh/vidoemediaapis/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/abiorh/vidoemediaapis/venv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/abiorh/vidoemediaapis/venv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/abiorh/vidoemediaapis/venv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/abiorh/vidoemediaapis/venv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+TypeError: StreamVideo.get() got an unexpected keyword argument 'pk'
+/home/abiorh/vidoemediaapis/video/urls.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/urls.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/urls.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /api/videos/5/
+Traceback (most recent call last):
+  File "/home/abiorh/vidoemediaapis/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/abiorh/vidoemediaapis/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/abiorh/vidoemediaapis/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/abiorh/vidoemediaapis/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/abiorh/vidoemediaapis/venv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/abiorh/vidoemediaapis/venv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/abiorh/vidoemediaapis/venv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/abiorh/vidoemediaapis/venv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/abiorh/vidoemediaapis/video/views.py", line 94, in get
+    response = FileResponse(generate_chunks(), content_type='video/mp4')
+NameError: name 'FileResponse' is not defined
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Internal Server Error: /api/videos/5/
+Traceback (most recent call last):
+  File "/home/abiorh/vidoemediaapis/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/abiorh/vidoemediaapis/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/abiorh/vidoemediaapis/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/abiorh/vidoemediaapis/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/abiorh/vidoemediaapis/venv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/abiorh/vidoemediaapis/venv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/abiorh/vidoemediaapis/venv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/abiorh/vidoemediaapis/venv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/abiorh/vidoemediaapis/video/views.py", line 94, in get
+    response = FileResponse(generate_chunks(), content_type='video/mp4')
+NameError: name 'generate_chunks' is not defined
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/serializers.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/serializers.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/serializers.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/serializers.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/models.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/models.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/models.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/models.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/models.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/models.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /api/videos/
+Traceback (most recent call last):
+  File "/home/abiorh/vidoemediaapis/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/abiorh/vidoemediaapis/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/abiorh/vidoemediaapis/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/abiorh/vidoemediaapis/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/abiorh/vidoemediaapis/venv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/abiorh/vidoemediaapis/venv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/abiorh/vidoemediaapis/venv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/abiorh/vidoemediaapis/venv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/abiorh/vidoemediaapis/video/views.py", line 32, in post
+    video_url = f'http://localhost:8000/videos/{serializer.data["id"]}/'
+KeyError: 'id'
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /api/videos/
+Traceback (most recent call last):
+  File "/home/abiorh/vidoemediaapis/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/abiorh/vidoemediaapis/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/abiorh/vidoemediaapis/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/abiorh/vidoemediaapis/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/abiorh/vidoemediaapis/venv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/abiorh/vidoemediaapis/venv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/abiorh/vidoemediaapis/venv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/abiorh/vidoemediaapis/venv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/abiorh/vidoemediaapis/video/views.py", line 33, in post
+    video_url = f'http://localhost:8000/videos/{serializer.data["pk"]}/'
+KeyError: 'pk'
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/serializers.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/serializers.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /videos/8
+Not Found: /favicon.ico
+Not Found: /videos/8/
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/abiorh/vidoemediaapis/video/views.py changed, reloading.
+Watching for file changes with StatReloader
