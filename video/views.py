@@ -11,6 +11,11 @@ from django.http import StreamingHttpResponse, FileResponse
 from django.shortcuts import get_object_or_404
 
 
+class Status(APIView):
+    def get(self, request):
+        return Response({'status': 'ok'}, status=status.HTTP_200_OK)
+
+
 class CreateListVideo(APIView):
     parser_classes = (MultiPartParser, FormParser)
 
