@@ -159,6 +159,16 @@ class Status(APIView):
 class CreateListVideo(APIView):
     parser_classes = (MultiPartParser, FormParser)
 
+    def get(self, request: Request):
+        videos = Video.objects.all()
+        serializer = VideoSerializer(videos, many=True)
+        response = {
+            "status": "success",
+            "message": "All Videos retrieved successfully",
+            "data": serializer.data
+        }
+        return Response(response, status=status.HTTP_200_OK)
+
     def post(self, request: Request):
         data = request.data
         video_file = data.get('video_binary')
