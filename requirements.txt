@@ -1,10 +1,10 @@
 asgiref
 Django
-djangorestframework
 django-cors-headers
+django-storages
+djangorestframework
 Pillow
+psycopg2-binary
 pytz
 sqlparse
 typing_extensions
-gunicorn
-

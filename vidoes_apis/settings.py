@@ -80,8 +80,12 @@ WSGI_APPLICATION = 'vidoes_apis.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'video_apidb',
+        'USER': 'postgres',
+        'PASSWORD': 'Lucifer_001',
+        'HOST': 'smartedconnectdb.cyhabgnrr90h.eu-west-3.rds.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
@@ -171,3 +175,4 @@ LOGGING = {
         'level': 'DEBUG',  # Adjust the logging level as needed
     },
 }
+
