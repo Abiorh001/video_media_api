@@ -133,7 +133,7 @@ MEDIA_URL = '/media/'
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOWS_ORIGINS = [
     "http://localhost:5500",
-    "https://smartedconnecttest-io.onrender.com",
+    "https://zuri-stage-6-api.onrender.com",
 ]
 
 CORS_ALLOW_METHODS = [
