@@ -8,3 +8,4 @@ psycopg2-binary
 pytz
 sqlparse
 typing_extensions
+gunicorn
