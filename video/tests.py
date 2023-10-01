@@ -1,23 +1,42 @@
+import pika
+import requests
 
-import imageio_ffmpeg as ffmpeg
-import subprocess
+# Set up RabbitMQ connection
+connection = pika.BlockingConnection(pika.ConnectionParameters('localhost'))
+channel = connection.channel()
 
-# Specify input video file and output audio file paths
-input_video_path = "/home/abiorh/Videos/Screencasts/scre.webm"
-output_audio_path = "/home/abiorh/Videos/Screencasts/"
+# Create a queue for incoming audio data
+channel.queue_declare(queue='audio_data')
 
-# Run the ffmpeg command to extract audio
-ffmpeg_command = [
-    "ffmpeg",
-    "-i", input_video_path,
-    "-vn",  # Disable video stream
-    "-acodec", "libmp3lame",  # Output audio codec (MP3)
-    "-q:a", "0",  # Audio quality (0 is the highest)
-    output_audio_path
-]
+# Callback for processing incoming messages
+def process_audio_data(ch, method, properties, body):
+    # Send audio data to Whisper AI for transcription
+    audio_data = body
+    transcription = send_audio_to_whisper_ai(audio_data)
 
-try:
-    subprocess.run(ffmpeg_command, check=True)
-    print("Audio extracted and saved as", output_audio_path)
-except subprocess.CalledProcessError as e:
-    print("Error extracting audio:", e)
+    # Process the transcription as needed (e.g., save to a database)
+    print("Transcription:", transcription)
+
+    # Acknowledge the message
+    ch.basic_ack(delivery_tag=method.delivery_tag)
+
+# Set up the message consumer
+channel.basic_consume(queue='audio_data', on_message_callback=process_audio_data)
+
+print("Waiting for audio data. To exit, press CTRL+C")
+channel.start_consuming()
+
+def send_audio_to_whisper_ai(audio_data):
+    # Use the Whisper AI API to send audio data and receive transcription
+    # Replace with your actual API endpoint and authentication
+    url = "https://whisper-ai-api.example.com/transcribe"
+    headers = {"Authorization": "Bearer YOUR_API_KEY"}
+    data = {"audio": audio_data}
+
+    response = requests.post(url, headers=headers, json=data)
+
+    if response.status_code == 200:
+        return response.json().get("transcription")
+    else:
+        print("Error:", response.text)
+        return None
