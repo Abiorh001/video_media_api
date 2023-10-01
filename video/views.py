@@ -66,7 +66,7 @@ class CreateListVideo(APIView):
                 video_binary = video_file.read()
 
                 # Create a temporary video file to save the video data
-                with tempfile.NamedTemporaryFile(delete=False, suffix=".mp4") as temp_video_file:
+                with tempfile.NamedTemporaryFile(delete=False, suffix=".webm") as temp_video_file:
                     temp_video_file.write(video_binary)
                     temp_video_path = temp_video_file.name
 
@@ -89,7 +89,7 @@ class CreateListVideo(APIView):
                         break
 
                     # Save the video chunk as a separate file
-                    chunk_filename = f'chunk_{chunk_number}.mp4'
+                    chunk_filename = f'chunk_{chunk_number}.webm'
                     chunk_path = os.path.join(chunk_directory, chunk_filename)
 
                     with open(chunk_path, 'wb') as chunk_file:
