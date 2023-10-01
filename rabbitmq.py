@@ -4,7 +4,7 @@ import requests
 import openai
 
 
-openai.api_key = "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"
+openai.api_key = "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"
 
   
 def process_audio_file_path(ch, method, properties, body):

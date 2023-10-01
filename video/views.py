@@ -46,11 +46,23 @@ class CreateListVideo(APIView):
                 "message": "Blob video is required.",
             }
             return Response(response, status=status.HTTP_400_BAD_REQUEST)
+        # Define a list of allowed video file extensions
+        file_extension = os.path.splitext(video_file.name)[1].lower()
+        allowed_extensions = ['.webm', '.mkv', '.mp4', 'blob']
+
+        if file_extension not in allowed_extensions:
+            response = {
+                "status": "error",
+                "message": "Unsupported video format. Only WebM (.webm) and Matroska (.mkv) are allowed.",
+            }
+            return Response(response, status=status.HTTP_415_UNSUPPORTED_MEDIA_TYPE)
+
+
 
         serializer = VideoSerializer(data=data)
         if serializer.is_valid():
             video_obj = serializer.save()
-            video_url = f'https://zuri-stage-6-apis.onrender.com/api/videos/{video_obj.id}/'
+            video_url = f'https://malzahra.tech/api/videos/{video_obj.id}/'
             video_obj.video_url = video_url
             video_obj.save()
 
@@ -66,7 +78,7 @@ class CreateListVideo(APIView):
                 video_binary = video_file.read()
 
                 # Create a temporary video file to save the video data
-                with tempfile.NamedTemporaryFile(delete=False, suffix=".webm") as temp_video_file:
+                with tempfile.NamedTemporaryFile(delete=False, suffix=file_extension) as temp_video_file:
                     temp_video_file.write(video_binary)
                     temp_video_path = temp_video_file.name
 
@@ -75,10 +87,12 @@ class CreateListVideo(APIView):
                 audio_clip = video_clip.audio
 
                 # Save the audio as a temporary audio file (e.g., WAV)
-                with tempfile.NamedTemporaryFile(delete=False, suffix=".wav") as audio_temp_file:
-                    audio_clip.write_audiofile(audio_temp_file.name)
-                    audio_temp_file_path = audio_temp_file.name
-
+                if video_clip.audio:
+                    with tempfile.NamedTemporaryFile(delete=False, suffix=".wav") as audio_temp_file:
+                        audio_clip.write_audiofile(audio_temp_file.name)
+                        audio_temp_file_path = audio_temp_file.name
+                else:
+                    audio_temp_file_path = None
                 # Reset the file pointer to the beginning of the video bytes
                 video_file.seek(0)
 
