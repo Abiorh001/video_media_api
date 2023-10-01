@@ -1,5 +1,4 @@
 
-argon2cffi-bindings
 arrow
 asgiref
 asttokens
