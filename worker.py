@@ -59,7 +59,7 @@ rabbitmq_vhost = 'your_vhost_name'
 queue_name = 'audio_file_paths'
 
 # OpenAI API key
-openai.api_key = os.environ.get('OPENAI_API_KEY')
+openai.api_key = "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"
 
 # Install RabbitMQ (replace with the appropriate package manager command)
 try:
