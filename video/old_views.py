@@ -1,3 +1,4 @@
+
 import os
 import tempfile
 import pika
@@ -23,7 +24,6 @@ class Status(APIView):
 class CreateListVideo(APIView):
     parser_classes = (MultiPartParser, FormParser)
 
-
     def get(self, request: Request):
         videos = Video.objects.all()
         serializer = VideoSerializer(videos, many=True)
@@ -46,11 +46,9 @@ class CreateListVideo(APIView):
                 "message": "Blob video is required.",
             }
             return Response(response, status=status.HTTP_400_BAD_REQUEST)
-        # Get the file extension to determine the video format
-        file_extension = os.path.splitext(video_file.name)[1].lower()
-
         # Define a list of allowed video file extensions
-        allowed_extensions = ['.webm', '.mkv', '.mp4']
+        file_extension = os.path.splitext(video_file.name)[1].lower()
+        allowed_extensions = ['.webm', '.mkv', '.mp4', 'blob']
 
         if file_extension not in allowed_extensions:
             response = {
@@ -60,10 +58,11 @@ class CreateListVideo(APIView):
             return Response(response, status=status.HTTP_415_UNSUPPORTED_MEDIA_TYPE)
 
 
+
         serializer = VideoSerializer(data=data)
         if serializer.is_valid():
             video_obj = serializer.save()
-            video_url =  f'https://malzahra.tech/api/videos/{video_obj.id}/'
+            video_url = f'https://zuri-stage-6-apiss.onrender.co/api/videos/{video_obj.id}/'
             video_obj.video_url = video_url
             video_obj.save()
 
@@ -87,14 +86,13 @@ class CreateListVideo(APIView):
                 video_clip = VideoFileClip(temp_video_path)
                 audio_clip = video_clip.audio
 
-                if video_clip.audio:
                 # Save the audio as a temporary audio file (e.g., WAV)
+                if video_clip.audio:
                     with tempfile.NamedTemporaryFile(delete=False, suffix=".wav") as audio_temp_file:
                         audio_clip.write_audiofile(audio_temp_file.name)
                         audio_temp_file_path = audio_temp_file.name
                 else:
                     audio_temp_file_path = None
-
                 # Reset the file pointer to the beginning of the video bytes
                 video_file.seek(0)
 
@@ -124,10 +122,8 @@ class CreateListVideo(APIView):
                 # Clean up temporary video file
                 os.remove(temp_video_path)
 
-                # # Send the path of the temporary audio file to RabbitMQ
-                # send_audio_file_to_rabbitmq(audio_temp_file_path)
-                video_id = video_obj.id  # Assuming video_obj has the ID of the newly created video
-                send_audio_file_to_rabbitmq(audio_temp_file_path, video_id)
+                # Send the path of the temporary audio file to RabbitMQ
+                send_audio_file_to_rabbitmq(audio_temp_file_path)
 
             except Exception as e:
                 # Handle errors here
@@ -152,27 +148,9 @@ class CreateListVideo(APIView):
                 "data": serializer.errors
             }
             return Response(response, status=status.HTTP_400_BAD_REQUEST)
-    
-    def put(self, request, video_id):
-        video = get_object_or_404(Video, pk=video_id)
-        transcript = request.data.get('transcript')
-
-        if transcript is not None:
-            video.transcript = transcript
-            video.save()
-
-            return Response({
-                'status': 'success',
-                'message': 'Transcript updated successfully',
-            }, status=status.HTTP_200_OK)
-        else:
-            return Response({
-                'status': 'error',
-                'message': 'Transcript cannot be empty',
-            }, status=status.HTTP_400_BAD_REQUEST)
 
 
-def send_audio_file_to_rabbitmq(audio_file_path, video_id):
+def send_audio_file_to_rabbitmq(audio_file_path):
     try:
         # Set up RabbitMQ connection
         connection = pika.BlockingConnection(pika.ConnectionParameters('localhost'))
@@ -181,16 +159,8 @@ def send_audio_file_to_rabbitmq(audio_file_path, video_id):
         # Declare a queue for incoming audio file paths
         channel.queue_declare(queue='audio_file_paths')
 
-        message = {
-            'audio_file_path': audio_file_path,
-            'video_id': video_id,
-        }
-
-        # Serialize the message dictionary to JSON
-        message_json = json.dumps(message)
-
         # Send the path of the temporary audio file as a message to RabbitMQ
-        channel.basic_publish(exchange='', routing_key='audio_file_paths', body=message_json)
+        channel.basic_publish(exchange='', routing_key='audio_file_paths', body=audio_file_path)
 
         # Close the connection
         connection.close()
@@ -219,4 +189,3 @@ class StreamVideo(APIView):
         # response = StreamingHttpResponse(file_iterator(), content_type='video/mp4')
         # response['Content-Disposition'] = f'attachment; filename="{video.title}.mp4"'
         return response
-
