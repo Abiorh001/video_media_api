@@ -20,7 +20,7 @@ class Status(APIView):
         return Response({'status': 'ok'}, status=status.HTTP_200_OK)
 
 
-class CreateListVideo(APIView):
+class CreateListVideoView(APIView):
     parser_classes = (MultiPartParser, FormParser)
 
 
@@ -153,6 +153,28 @@ class CreateListVideo(APIView):
             }
             return Response(response, status=status.HTTP_400_BAD_REQUEST)
     
+    
+class StreamUpdateDestroyVideoView(APIView):
+
+
+    def get(self, request: Request, video_id):
+        video = get_object_or_404(Video, pk=video_id)
+        chunk_file = VideoChunk.objects.filter(video=video).order_by('chunk_number')
+
+        def generate_chunks():
+            for chunk in chunk_file:
+                yield from chunk.chunk_file.open('rb')
+
+        response = FileResponse(generate_chunks(), content_type='video/webm')
+
+        # Set the Content-Disposition header for inline content
+        response['Content-Disposition'] = f'inline; filename="{video.title}.webm"'
+
+
+        # response = StreamingHttpResponse(file_iterator(), content_type='video/mp4')
+        # response['Content-Disposition'] = f'attachment; filename="{video.title}.mp4"'
+        return response
+
     def put(self, request, video_id):
         video = get_object_or_404(Video, pk=video_id)
         transcript = request.data.get('transcript')
@@ -170,6 +192,15 @@ class CreateListVideo(APIView):
                 'status': 'error',
                 'message': 'Transcript cannot be empty',
             }, status=status.HTTP_400_BAD_REQUEST)
+    
+    def delete(self, request, video_id):
+            video = get_object_or_404(Video, pk=video_id)
+            video.delete()
+
+            return Response({
+                'status': 'success',
+                'message': 'Video deleted successfully',
+            }, status=status.HTTP_200_OK)
 
 
 def send_audio_file_to_rabbitmq(audio_file_path, video_id):
@@ -201,22 +232,22 @@ def send_audio_file_to_rabbitmq(audio_file_path, video_id):
         print("Error sending audio file path to RabbitMQ:", str(e))
 
 
-class StreamVideo(APIView):
-    def get(self, request: Request, video_id):
-        video = get_object_or_404(Video, pk=video_id)
-        chunk_file = VideoChunk.objects.filter(video=video).order_by('chunk_number')
-
-        def generate_chunks():
-            for chunk in chunk_file:
-                yield from chunk.chunk_file.open('rb')
-        
-        response = FileResponse(generate_chunks(), content_type='video/webm')
+#class StreamVideo(APIView):
+   # def get(self, request: Request, video_id):
+   #     video = get_object_or_404(Video, pk=video_id)
+    #    chunk_file = VideoChunk.objects.filter(video=video).order_by('chunk_number')
+#
+ #       def generate_chunks():
+  #          for chunk in chunk_file:
+   #             yield from chunk.chunk_file.open('rb')
+   #     
+    #    response = FileResponse(generate_chunks(), content_type='video/webm')
     
         # Set the Content-Disposition header for inline content
-        response['Content-Disposition'] = f'inline; filename="{video.title}.webm"'
+     #   response['Content-Disposition'] = f'inline; filename="{video.title}.webm"'
     
 
         # response = StreamingHttpResponse(file_iterator(), content_type='video/mp4')
         # response['Content-Disposition'] = f'attachment; filename="{video.title}.mp4"'
-        return response
+      #  return response
 
