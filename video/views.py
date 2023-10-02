@@ -13,9 +13,15 @@ from .serializers import VideoSerializer
 from django.conf import settings
 from django.http import StreamingHttpResponse, FileResponse
 from django.shortcuts import get_object_or_404
+from drf_yasg.utils import swagger_auto_schema
 
 
 class Status(APIView):
+    @swagger_auto_schema(
+        operation_summary="Server Status",
+        responses={
+            200: 'Server is running'},
+    ) 
     def get(self, request):
         return Response({'status': 'ok'}, status=status.HTTP_200_OK)
 
@@ -23,7 +29,11 @@ class Status(APIView):
 class CreateListVideoView(APIView):
     parser_classes = (MultiPartParser, FormParser)
 
-
+    @swagger_auto_schema(
+        operation_summary="Get List of all uploaded videos",
+        responses={
+            200: 'All Vidoes retrieved successfully'},
+    ) 
     def get(self, request: Request):
         videos = Video.objects.all()
         serializer = VideoSerializer(videos, many=True)
@@ -34,6 +44,12 @@ class CreateListVideoView(APIView):
         }
         return Response(response, status=status.HTTP_200_OK)
 
+    @swagger_auto_schema(
+        operation_summary="Upload A New Video",
+        request_body=VideoSerializer,
+        responses={
+            201: 'Video uploaded successfully'},
+    )
     def post(self, request: Request):
         data = request.data
         video_file = data.get('video_binary')
@@ -156,7 +172,11 @@ class CreateListVideoView(APIView):
     
 class StreamUpdateDestroyVideoView(APIView):
 
-
+    @swagger_auto_schema(
+        operation_summary="Stream uploaded video",
+        responses={
+            200: 'Video Streaming started'},
+    )
     def get(self, request: Request, video_id):
         video = get_object_or_404(Video, pk=video_id)
         chunk_file = VideoChunk.objects.filter(video=video).order_by('chunk_number')
@@ -174,7 +194,12 @@ class StreamUpdateDestroyVideoView(APIView):
         # response = StreamingHttpResponse(file_iterator(), content_type='video/mp4')
         # response['Content-Disposition'] = f'attachment; filename="{video.title}.mp4"'
         return response
-
+    
+    @swagger_auto_schema(
+        operation_summary="update video transcript to get text",
+        responses={
+            200: 'video transcript updated successfully'},
+    )
     def put(self, request, video_id):
         video = get_object_or_404(Video, pk=video_id)
         transcript = request.data.get('transcript')
@@ -193,6 +218,11 @@ class StreamUpdateDestroyVideoView(APIView):
                 'message': 'Transcript cannot be empty',
             }, status=status.HTTP_400_BAD_REQUEST)
     
+    @swagger_auto_schema(
+        operation_summary="Delete uploaded video",
+        responses={
+            200: 'video deleted successfully'},
+    )
     def delete(self, request, video_id):
             video = get_object_or_404(Video, pk=video_id)
             video.delete()

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Upload</title>
+</head>
+<body>
+    <h1>Upload a Video</h1>
+    <form id="video-upload-form" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="video_binary">Select Video File:</label>
+        <input type="file" id="video_binary" name="video_binary" accept=".webm,.mkv,.mp4" required>
+        <br>
+        <label for="title">Video Title:</label>
+        <input type="text" id="title" name="title" placeholder="Video Title" required>
+        <br>
+        <label for="description">Video Description:</label>
+        <input type="text" id="description" name="description" placeholder="Video Description" required>
+        <br>
+        <button type="submit">Upload</button>
+    </form>
+
+    <div id="response-message"></div>
+
+    <script>
+        document.getElementById('video-upload-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const formData = new FormData(this);
+
+            fetch('https://malzahra.tech/api/videos/', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    document.getElementById('response-message').innerHTML = `Video uploaded successfully. <a href="${data.data.video_url}">View Video</a>`;
+                } else {
+                    document.getElementById('response-message').innerHTML = `Error: ${data.message}`;
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById('response-message').innerHTML = 'An error occurred while uploading the video.';
+            });
+        });
+    </script>
+</body>
+</html>
