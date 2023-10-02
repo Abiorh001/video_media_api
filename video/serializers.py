@@ -6,7 +6,7 @@ class VideoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Video
         fields = ['id', 'title', 'description', 'video_binary', 'video_url', 'transcript', 'last_played', 'created_at']
-        read_only_fields = ['last_played', 'created_at', 'video_binary', 'video_url']
+        read_only_fields = ['last_played', 'created_at', 'video_url']
 
     def update(self, instance, validated_data):
         # Update the 'transcript' field with plain text data

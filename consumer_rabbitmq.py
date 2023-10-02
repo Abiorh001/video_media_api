@@ -4,7 +4,7 @@ import requests
 import openai
 import json
 
-openai.api_key = "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"
+openai.api_key = "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"
 
 def update_video_with_transcript(transcript, video_id):
     url = f'https://malzahra.tech/api/videos/{video_id}/'
