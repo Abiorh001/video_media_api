@@ -61,10 +61,17 @@ The code is organized into several parts:
 
 ### Stream Uploaded Video
 
-- **Endpoint**: `/videos/{video_id}/`
+- **Endpoint**: `/videos/{video_id}/stream/`
 - **HTTP Method**: GET
 - **Description**: Streams the uploaded video with the specified ID.
 - **Response**: Video stream with the "Content-Disposition" header for inline content.
+### Retrieve Uploaded Video
+
+- **Endpoint**: `/videos/{video_id}/`
+- **HTTP Method**: GET
+- **Description**: Retrieve  the uploaded video with the specified ID.
+- **Response**: JSON object with a success message and the video's details if the upload is successful.
+
 
 ### Update Video Transcript
 
